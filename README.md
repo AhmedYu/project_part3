@@ -47,7 +47,7 @@ The job postings are managed using a `useState` hook, with each job containing:
 - `parts_available`: Availability status of required parts.
 
   ##Images
-  ![Mechanic Home Page](./Readme_assets/mechanic_home_page.png "Mechanic Home Page Screenshot")
+  ![Mechanic Home Page](./src/Readme_assets/mechanic_home_page.png "Mechanic Home Page Screenshot")
 
 
 ---
