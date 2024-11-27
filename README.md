@@ -46,6 +46,10 @@ The job postings are managed using a `useState` hook, with each job containing:
 - `accepted`: Boolean indicating acceptance status.
 - `parts_available`: Availability status of required parts.
 
+  ##Images
+  ![Mechanic Home Page](./Readme_assets/mechanic_home_page.png "Mechanic Home Page Screenshot")
+
+
 ---
 
 ## Installation and Setup
