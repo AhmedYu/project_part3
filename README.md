@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+ # Mechanic Home Page Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Mechanic Home Page** component is part of a car service platform, **MechLink**, that connects customers with mechanics for various vehicle services. This project includes interactive elements for managing job postings, accepting or rejecting tasks, and viewing additional details about service requests.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Job Listings**: Displays a list of mechanic jobs using the `Row` component.
+- **View More Functionality**: Allows users to view detailed information about a job through a modal.
+- **Job Acceptance Management**: Enables mechanics to accept or cancel jobs dynamically.
+- **Responsive Design**: Built with Bootstrap and custom CSS for cross-device compatibility.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+### Main Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Mechanic_Home_page**
+   - Displays all mechanic job postings.
+   - Handles the "Accept" and "View More" functionalities.
 
-### `npm run build`
+2. **Row**
+   - Represents a single job in the list.
+   - Includes job details such as title, date, price, location, and description.
+   - Offers interactive options like "Accept" and "View More."
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **CustomLabel**  
+   - Renders labels for job details with custom styling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **BTN**
+   - Reusable button component for accept/cancel functionality.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **MechLinkLogo**
+   - Displays the platform's logo.
 
-### `npm run eject`
+### Data Structure
+The job postings are managed using a `useState` hook, with each job containing:
+- `id`: Unique identifier.
+- `title`: Job title.
+- `description`: Job description.
+- `date`: Scheduled date.
+- `price`: Estimated price.
+- `location`: Job location.
+- `accepted`: Boolean indicating acceptance status.
+- `parts_available`: Availability status of required parts.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **
