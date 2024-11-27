@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
+import BTN from "./block_like_compoents/button";
+import Mechanic_Home_page from "./Screens/Mechanic_Home_page";
+import Row from "./block_like_compoents/Row";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
+import { Description } from "./block_like_compoents/Description";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Mechanic_Home_page />;
 }
 
 export default App;

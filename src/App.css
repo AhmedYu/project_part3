@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+ 
+.label-custom{
+  color: #9DBEE6;
+  background-color: #1B1B1D ;
+  font-size: 100px;
+}
+ .dark_background {
+  background-color: #000000;
+  color: #EEEEEE;
+ }
+ 
+ 
+ .list {
+  background-color: #D9D9D9;
+ }
+ .row_icons {
+  color:#56BC6C;
+ }
+ .dotes {
+  color: #4BA1BC;
+ }
+
+ @media  (max-width:1366px ) {
+
+  .btn-outline-primary {
+    /* width: 90%; */
+    background-color: red;
+  
+    font-size: .1rem;
+  }
+  .horizontal_more {
+
+    display: none;
+
+  }
+
+
+}
+@media   (min-width: 1366px) {
+  .vertical_more {
+    display: none;
+
+  }
+
+  
+}
+.logo {
+  width: 150px;
+  height: auto;
+}
+.custom-btn,.btn, .btn-outline-success  {
+  background-color : rebeccapurple
+}
+
+.custom-btn,.btn, .btn-outline-success ,
+.custom-btn:active {
+  background-color: darkblue; /* Removes active background color */
+  color: #0b3e1d; /* Optional: Even darker success color */
+  border-color: #0b3e1d; /* Optional: Even darker border color */
+}
