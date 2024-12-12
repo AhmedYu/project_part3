@@ -2,18 +2,19 @@ import Row from "../block_like_compoents/Row";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavBar } from "../block_like_compoents/NavBar";
+import jobList from "../staticData/jobData";
 import {
-  Modal,
-  Button,
-  ModalDialog,
   ModalBody,
   ModalHeader,
+  ModalDialog,
+  Modal,
+  Button,
 } from "react-bootstrap";
 
 export default function Mechanic_Home_page() {
   const [showModal, setShowModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
 
-  // Example data for the rows
   const [data, setData] = useState([
     {
       id: 1,
@@ -97,10 +98,15 @@ export default function Mechanic_Home_page() {
       parts_available: "NO",
     },
   ]);
-  function handleViewMoreClick(jobKey) {
-    alert(`hey with id:, ${jobKey}`);
-    setShowModal(!showModal);
-  }
+
+  const handleViewMoreClick = (jobId) => {
+    const job = data.find((job) => job.id === jobId);
+    if (job) {
+      setSelectedJob(job);
+      setShowModal(true);
+    }
+  };
+
   const handleAccept = (id) => {
     setData((prevData) =>
       prevData.map((job) =>
@@ -108,17 +114,17 @@ export default function Mechanic_Home_page() {
       )
     );
   };
+
   return (
-    <div className="container-fluid p-3  ">
-      <NavBar />
+    <div className="container-fluid p-3">
       <div className="row mb-4">
         <div className="col">
-          <h5 className="text-center text-muted ">Mechanic Jobs</h5>
+          <h5 className="text-center text-muted">Mechanic Jobs</h5>
         </div>
       </div>
-      <div className="row row-cols-1 bg-white row-cols-lg-3 g-2  ">
+      <div className="row row-cols-1 bg-white row-cols-lg-3 g-2">
         {data.map((job) => (
-          <div key={job.id} className="col ">
+          <div key={job.id} className="col">
             <Row
               id={job.id}
               title={job.title}
@@ -128,24 +134,51 @@ export default function Mechanic_Home_page() {
               description={job.description}
               parts_available={job.parts_available}
               accepted={job.accepted}
-              onAccept={handleAccept} // change the acceptance to false or true
+              onAccept={handleAccept}
               viewMoreclickHandler={handleViewMoreClick}
             />
           </div>
         ))}
       </div>
-      if(showModal)
-      {
-        <Modal show={showModal} onHide={() => setShowModal(false)}>
-          {
-            <ModalDialog>
-              <ModalBody>
-                <ModalHeader>this will have the title</ModalHeader>
-              </ModalBody>
-            </ModalDialog>
-          }
+
+      {showModal && selectedJob && (
+        <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedJob.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              <strong>Description:</strong> {selectedJob.description}
+            </p>
+            <p>
+              <strong>Date:</strong> {selectedJob.date}
+            </p>
+            <p>
+              <strong>Price:</strong> {selectedJob.price}
+            </p>
+            <p>
+              <strong>Location:</strong> {selectedJob.location}
+            </p>
+            <p>
+              <strong>Parts Available:</strong> {selectedJob.parts_available}
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="success" onClick={() => setShowModal(false)}>
+              Close
+            </Button>
+            <Button
+              variant={selectedJob.accepted ? "danger" : "success"}
+              onClick={() => {
+                handleAccept(selectedJob.id);
+                setShowModal(false);
+              }}
+            >
+              {selectedJob.accepted ? "Cancel Job" : "Accept Job"}
+            </Button>
+          </Modal.Footer>
         </Modal>
-      }
+      )}
     </div>
   );
 }

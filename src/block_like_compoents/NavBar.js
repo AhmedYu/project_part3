@@ -1,13 +1,14 @@
+// NavBar.js
+import React from "react";
 import MechLinkLogo from "../block_like_compoents/Logo";
-
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary  border border-top-0 mb-2">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary border border-top-0 mb-2">
       <div className="container-fluid">
-        <a className="navbar-brand d-flex align-items-center" href="#">
-          <MechLinkLogo />
-        </a>
-
+        <Link className="navbar-brand" to="/">
+          MechLink
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,19 +23,24 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+              <Link className="nav-link" to="/booked">
+                Booked Work
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+              <Link className="nav-link" to="/history">
+                Work History
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/comments">
+                Review Comments
+              </Link>
             </li>
           </ul>
         </div>

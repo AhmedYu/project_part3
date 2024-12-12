@@ -1,0 +1,84 @@
+const jobList = [
+  {
+    id: 1,
+    title: "Front Brakes Issue",
+    description:
+      "The car's front brake pads are worn down, causing squealing noises and reduced braking performance. The brake rotors may also be damaged, leading to vibration and increased stopping distance.",
+    date: "May 23, 2025",
+    price: "$235",
+    location: "St. Paul, MN",
+    accepted: false,
+    parts_available: "NO",
+  },
+  {
+    id: 2,
+    title: "Front Brakes Issue",
+    description:
+      "The car's front brake pads are worn down, causing squealing noises and reduced braking performance. The brake rotors may also be damaged, leading to vibration and increased stopping distance.",
+    date: "May 23, 2025",
+    price: "$235",
+    location: "St. Paul, MN",
+    accepted: false,
+    parts_available: "YES",
+  },
+  {
+    id: 3,
+    title: "Oil Change Required",
+    description:
+      "The car's engine oil is dirty and needs to be replaced to ensure optimal engine performance and longevity. Neglecting an oil change can lead to engine damage.",
+    date: "June 12, 2025",
+    price: "$85",
+    location: "Minneapolis, MN",
+    accepted: false,
+    parts_available: "NO",
+  },
+  {
+    id: 4,
+    title: "Tire Replacement Needed",
+    description:
+      "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
+
+    date: "July 7, 2025",
+    price: "$400",
+    location: "Eagan, MN",
+    accepted: false,
+    parts_available: "YES",
+  },
+  {
+    id: 5,
+    title: "Tire Replacement Needed",
+    description:
+      "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
+
+    date: "July 7, 2025",
+    price: "$400",
+    location: "Eagan, MN",
+    accepted: false,
+    parts_available: "NO",
+  },
+  {
+    id: 6,
+    title: "Tire Replacement Needed",
+    description:
+      "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
+
+    date: "July 7, 2025",
+    price: "$400",
+    location: "Eagan, MN",
+    accepted: false,
+    parts_available: "YES",
+  },
+  {
+    id: 7,
+    title: "Battery Check",
+    description:
+      "The car's battery is showing signs of weakness, such as slow cranking or difficulty starting in cold weather. A battery check will determine if it needs replacement or maintenance.",
+
+    date: "August 15, 2025",
+    price: "$60",
+    location: "Bloomington, MN",
+    accepted: false,
+    parts_available: "NO",
+  },
+];
+export { jobList };

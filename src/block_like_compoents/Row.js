@@ -7,7 +7,6 @@ import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import BTN from "./button";
-import "../App.css";
 
 export default function Row({
   id,
@@ -16,69 +15,51 @@ export default function Row({
   price,
   location,
   description,
-  parts_available,
   accepted,
   onAccept,
   viewMoreclickHandler,
 }) {
-  let maxLength = 50;
+  const maxLength = 50;
 
   return (
     <div
       style={{ width: "100%" }}
-      className="container-fluid card shadow-lg border-bottom   rounded m-1 border   pb-2"
+      className="container-fluid card shadow-lg border-bottom rounded m-1 border pb-2"
     >
       <div className="row align-items-center">
-        <h5 className="col-10"> {title}</h5>
-        <span className="col-2 text-end ">
-          <span className="horizontal_more ">
-            <MoreHorizIcon
-              onClick={
-                // Call viewMoreclickHandler with the id
-
-                () => viewMoreclickHandler(id)
-              }
-            />
-          </span>
-          <span className=" vertical_more ">
-            <MoreVertIcon />
-          </span>
-        </span>
+        <h5 className="col-10">{title}</h5>
+        <div className="col-2 text-end">
+          <MoreHorizIcon onClick={() => viewMoreclickHandler(id)} />
+        </div>
       </div>
-
-      {/* Description */}
       <div className="row">
-        <Description
-          description={description.trim().substring(0, maxLength) + "..."}
-          cssClass="col ps-4"
-        />
+        <p className="col ps-4">
+          {description.length > maxLength
+            ? description.substring(0, maxLength) + "..."
+            : description}
+        </p>
       </div>
-
-      <div className="row     ps-2 ">
-        <div className=" col   ">
-          <EventNoteIcon className="me-2 row_icons  " />
-          <CustomLabel labelTitle={date} cssClass="" />
+      <div className="row ps-2">
+        <div className="col">
+          <EventNoteIcon className="me-2 row_icons" />
+          {date}
         </div>
-        <div className="col ">
-          <PriceCheckIcon className="me-2 row_icons  " />
-          <CustomLabel labelTitle={price} cssClass="" />
+        <div className="col">
+          <PriceCheckIcon className="me-2 row_icons" />
+          {price}
         </div>
-        <div className=" col">
-          <PinDropIcon className="me-2 row_icons " />
-          <CustomLabel labelTitle={location} cssClass="" />
+        <div className="col">
+          <PinDropIcon className="me-2 row_icons" />
+          {location}
         </div>
-        <div className="col ">
+        <div className="col">
           <BTN
-            cssStyle={` ${accepted ? "btn btn-danger" : "btn btn-success"}`}
+            cssStyle={`btn ${accepted ? "btn-danger" : "btn-success"}`}
             handler={() => onAccept(id)}
             title={accepted ? "Cancel" : "Accept"}
-          ></BTN>
+          />
         </div>
       </div>
     </div>
   );
-}
-
-function moreClicked() {
-  //navigate to more detail view
 }

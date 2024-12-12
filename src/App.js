@@ -1,13 +1,44 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-import BTN from "./block_like_compoents/button";
+// App.js (main entry point)
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Mechanic_Home_page from "./Screens/Mechanic_Home_page";
-import Row from "./block_like_compoents/Row";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import BookedWork from "./Screens/BookedWork";
+import WorkHistory from "./Screens/History";
+import ReviewComments from "./Screens/ReviewsComments";
+import { NavBar } from "./block_like_compoents/NavBar";
 
-import { Description } from "./block_like_compoents/Description";
 function App() {
-  return <Mechanic_Home_page />;
+  const [acceptedJobs, setAcceptedJobs] = useState([]);
+
+  const handleAcceptJob = (job) => {
+    setAcceptedJobs((prevJobs) => {
+      if (prevJobs.some((j) => j.id === job.id)) {
+        return prevJobs.filter((j) => j.id !== job.id); // Remove if already accepted
+      }
+      return [...prevJobs, job]; // Add new accepted job
+    });
+  };
+
+  return (
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route
+          path="/"
+          element={<Mechanic_Home_page onAcceptJob={handleAcceptJob} />}
+        />
+        <Route
+          path="/booked"
+          element={<BookedWork acceptedJobs={acceptedJobs} />}
+        />
+        <Route
+          path="/history"
+          element={<WorkHistory acceptedJobs={acceptedJobs} />}
+        />
+        <Route path="/comments" element={<ReviewComments />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
