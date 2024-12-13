@@ -65,6 +65,7 @@ The job postings are managed using a `useState` hook, with each job containing:
     ----
         ![Mechanic Home Page](./src/Readme_assets/s6.png "Mechanic Home Page Screenshot")
         ---
-            ![Mechanic Home Page](./src/Readme_assets/s7.png "Mechanic Home Page Screenshot")
+        ![Mechanic Home Page](./src/Readme_assets/s7.png "Mechanic Home Page Screenshot")
+
 
 
