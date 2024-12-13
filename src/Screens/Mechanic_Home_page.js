@@ -2,7 +2,8 @@ import Row from "../block_like_compoents/Row";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavBar } from "../block_like_compoents/NavBar";
-import jobList from "../staticData/jobData";
+import jobData from "../staticData/jobData";
+
 import {
   ModalBody,
   ModalHeader,
@@ -114,7 +115,7 @@ export default function Mechanic_Home_page() {
       )
     );
   };
-
+  console.log(jobData[2].title);
   return (
     <div className="container-fluid p-3">
       <div className="row mb-4">
@@ -164,7 +165,10 @@ export default function Mechanic_Home_page() {
             </p>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="success" onClick={() => setShowModal(false)}>
+            <Button
+              variant="custom-btn:active"
+              onClick={() => setShowModal(false)}
+            >
               Close
             </Button>
             <Button

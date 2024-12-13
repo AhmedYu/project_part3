@@ -1,4 +1,3 @@
-// App.js (main entry point)
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Mechanic_Home_page from "./Screens/Mechanic_Home_page";
@@ -13,9 +12,9 @@ function App() {
   const handleAcceptJob = (job) => {
     setAcceptedJobs((prevJobs) => {
       if (prevJobs.some((j) => j.id === job.id)) {
-        return prevJobs.filter((j) => j.id !== job.id); // Remove if already accepted
+        return prevJobs.filter((j) => j.id !== job.id);
       }
-      return [...prevJobs, job]; // Add new accepted job
+      return [...prevJobs, job];
     });
   };
 

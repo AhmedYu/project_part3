@@ -1,4 +1,3 @@
-// NavBar.js
 import React from "react";
 import MechLinkLogo from "../block_like_compoents/Logo";
 import { Link } from "react-router-dom";

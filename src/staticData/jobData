@@ -9,6 +9,7 @@ const jobList = [
     location: "St. Paul, MN",
     accepted: false,
     parts_available: "NO",
+    completed: false, // New field added
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const jobList = [
     location: "St. Paul, MN",
     accepted: false,
     parts_available: "YES",
+    completed: false, // New field added
   },
   {
     id: 3,
@@ -31,54 +33,56 @@ const jobList = [
     location: "Minneapolis, MN",
     accepted: false,
     parts_available: "NO",
+    completed: false, // New field added
   },
   {
     id: 4,
     title: "Tire Replacement Needed",
     description:
       "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
-
     date: "July 7, 2025",
     price: "$400",
     location: "Eagan, MN",
     accepted: false,
     parts_available: "YES",
+    completed: false, // New field added
   },
   {
     id: 5,
     title: "Tire Replacement Needed",
     description:
       "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
-
     date: "July 7, 2025",
     price: "$400",
     location: "Eagan, MN",
     accepted: false,
     parts_available: "NO",
+    completed: false, // New field added
   },
   {
     id: 6,
     title: "Tire Replacement Needed",
     description:
       "The car's tires are worn down, with low tread depth, affecting traction, handling, and braking performance. Replacing the tires is crucial for safety and fuel efficiency.",
-
     date: "July 7, 2025",
     price: "$400",
     location: "Eagan, MN",
     accepted: false,
     parts_available: "YES",
+    completed: false, // New field added
   },
   {
     id: 7,
     title: "Battery Check",
     description:
       "The car's battery is showing signs of weakness, such as slow cranking or difficulty starting in cold weather. A battery check will determine if it needs replacement or maintenance.",
-
     date: "August 15, 2025",
     price: "$60",
     location: "Bloomington, MN",
     accepted: false,
     parts_available: "NO",
+    completed: false, // New field added
   },
 ];
-export { jobList };
+
+export default jobList;
