@@ -49,6 +49,7 @@ The job postings are managed using a `useState` hook, with each job containing:
   ##Images
   ![Mechanic Home Page](./src/Readme_assets/mechanic_home_page.png "Mechanic Home Page Screenshot")
 
+  ![Mechanic Home Page](./src/Readme_assets/s1.png "Mechanic Home Page Screenshot")
 
 ---
 
